@@ -1,0 +1,15 @@
+note:
+this asset requires vector graphic and TMPro packages from the package manager
+
+**INSTALL INSTRUCTIONS**
+1. TMPro packages from package manager
+2. Import unity Vector Graphics from package manager (still in preview mode
+so you need to enable "show preview packages option")
+if you still you can't see it click on the plus icon on the up left and select add a package from git URL and paste this URL "com.unity.vectorgraphics"
+3. Import "WorldMap" package
+4. Add"worldmap_prefab" to your scene 
+5. Right-click on "worldmap" and select unpack prefab completely
+(please make sure to do the last step to save any changes you do to the map )
+6. Add"EventSystem" to your scene in order to interact with the map
+7. Dont change the "height" and "width" values of the worldmap game object
+8. DONT change children's order or position
