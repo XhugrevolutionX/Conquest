@@ -55,6 +55,12 @@ public class WorldMap : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,I
     MapStyleController mapStyleController;
     bool mouseOnRange = false;
     Vector2 firstTouch;
+    
+    
+    //Territories
+    [SerializeField] TerritoryManager territories;
+    
+    
     ///<summary>
     /// Clear all selected countries
     ///</summary>
@@ -183,7 +189,17 @@ public class WorldMap : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,I
         height = (int)rectTransform.rect.height;
         textureWidth = GSmap.width;
         textureHeigth = GSmap.height;
+        
+        CreateTerritories();
+        
+        
     }
+
+    private void CreateTerritories()
+    {
+        territories.CreateTerritory(new List<Country>() { Country.Canada, Country.United_States });
+    }
+
     void Update()
     {
         if(mouseOnRange && canInteracte)
@@ -244,7 +260,6 @@ public class WorldMap : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,I
                 onHighlightCountry(this,EventArgs.Empty);
             }
     }
-    
 }
 public enum Country
 {
